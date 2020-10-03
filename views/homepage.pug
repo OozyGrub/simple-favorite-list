@@ -1,0 +1,16 @@
+html
+    head
+        title Favorite List
+    body
+        h1 Insert New Item
+        form(action='/add', method='POST')
+            p
+                |   name: 
+                input(type='text', name='itemName', value='')
+            input(type='submit', value='Add')
+        form(action='/clear', method='POST')
+            input(type='submit', value='Clear')
+        body
+            each val in list= list
+                li= val
+

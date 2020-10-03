@@ -1,0 +1,14 @@
+version: '3'
+services:
+    express_node:
+        build: .
+        ports:
+            - "8083:8083"
+        environment: 
+            - HOST=mongo_node
+    mongo_node:
+        image: "mongo"
+        volumes:
+            - ./mongo-volume:/data/db
+        ports:
+            - "27017:27017"
